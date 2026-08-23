@@ -12,7 +12,9 @@ export default async function Project({
 }) {
   const data = project_details.find((p) => p.id === Number(params.projectId));
 
-  if (data?.type === 'airflow' || data?.type === 'grafana') {
+  if (!data) redirect('/');
+
+  if (data.type === 'airflow' || data.type === 'grafana') {
     redirect(`/in-development?project=${data.type}`);
   }
 
