@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 export default function InDevelopment() {
     const searchParams = useSearchParams();
@@ -103,9 +104,11 @@ export default function InDevelopment() {
                                 &gt; Preview: {currentProject.name}
                             </div>
                             <div className="border border-[#333] bg-[#0b0b0b] p-3 rounded-lg">
-                                <img
+                                <Image
                                     src={currentProject.image}
                                     alt={currentProject.name}
+                                    width={800}
+                                    height={0}
                                     className="w-full h-auto rounded-md"
                                 />
                             </div>

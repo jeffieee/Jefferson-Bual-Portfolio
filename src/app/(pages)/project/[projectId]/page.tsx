@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaGithub } from 'react-icons/fa';
 import { GoHomeFill } from 'react-icons/go';
 import { project_details } from '@/app/_lib/db';
@@ -51,16 +52,20 @@ export default async function Project({
               data.link.map((link: string, index: number) => (
                 <div key={index}>
                   {data.type === 'mobile' ? (
-                    <img
+                    <Image
                       src={'https://lh3.googleusercontent.com/d/' + link}
                       alt='img'
-                      className='w-[250px]'
+                      width={250}
+                      height={0}
+                      className='w-[250px] h-auto'
                     />
                   ) : (
-                    <img
+                    <Image
                       src={'https://lh3.googleusercontent.com/d/' + link}
                       alt='img'
-                      className='w-[500px]'
+                      width={500}
+                      height={0}
+                      className='w-[500px] h-auto'
                     />
                   )}
                 </div>

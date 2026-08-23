@@ -36,7 +36,7 @@ export default function LandingPage() {
 
             <div className='flex flex-col gap-1 animate-slideInLeft2'>
               <h2 className='font-bold xl:text-[48px] lg:text-[38px] md:text-[28px] text-[28px] leading-tight m-0'>
-                Hello! I'm
+                Hello! I&apos;m
               </h2>
               <h1 className='font-sora font-bold xl:text-[64px] lg:text-[48px] md:text-[40px] text-[40px] leading-none m-0 animate-slideInLeft3'>
                 Jefferson C. Bual
