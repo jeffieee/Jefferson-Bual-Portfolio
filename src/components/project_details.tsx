@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 export default function ProjectDetails() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const projectDetails = [
     {
@@ -16,8 +17,8 @@ export default function ProjectDetails() {
       badge: 'In Development',
       title: 'Airflow Data Pipeline',
       description:
-        'An automated data pipeline built with Apache Airflow that fetches free nature-related APIs — including climate, earthquake, and other environmental data — orchestrates ETL workflows, schedules tasks, and loads processed data into a MySQL database for downstream analytics and monitoring.',
-      highlights: ['Nature API ingestion (climate, earthquake, environment)', 'Automated ETL scheduling', 'Loads processed data into MySQL'],
+        'A personal project I built to practice data engineering. It pulls data from free nature-related APIs (climate, earthquake, and environmental feeds), runs them through an Airflow ETL pipeline, and stores the results in MySQL.',
+      highlights: ['Pulls from climate, earthquake, and environment APIs', 'Automated ETL scheduling with Airflow', 'Stores processed data in MySQL'],
       tools: [
         { src: '/airflow-icon.svg', alt: 'Airflow' },
         { src: '/python.png', alt: 'Python' },
@@ -33,8 +34,8 @@ export default function ProjectDetails() {
       badge: 'In Development',
       title: 'Grafana Monitoring Dashboard',
       description:
-        'A collection of interactive Grafana dashboards visualizing data from multiple sources — including the Airflow nature data pipeline and other database projects. Showcases real-time metrics, environmental trends, and analytics panels across all connected datasets.',
-      highlights: ['Visualizes Airflow nature pipeline data', 'Connected to multiple database sources', 'Real-time metrics & analytics panels'],
+        'A set of Grafana dashboards I built to visualize data from my Airflow pipeline and other database projects. It gives a live view of metrics and trends across all connected data sources.',
+      highlights: ['Visualizes data from the Airflow nature pipeline', 'Connected to multiple database sources', 'Live metrics and trend panels'],
       tools: [
         { src: '/grafana-icon.svg', alt: 'Grafana' },
         { src: '/mysql-logo.svg', alt: 'MySQL' },
@@ -49,8 +50,8 @@ export default function ProjectDetails() {
       badge: 'Website',
       title: 'CityAssist: Local Resident Monitoring and Demographic-Based Program Recommendation System',
       description:
-        'The Data-Driven Barangay Monitoring System improves local governance by utilizing real-time data collection and analysis, enhancing decision-making, ensuring efficient resource allocation, and improving community services.',
-      highlights: ['Real-time data collection', 'Demographic-based recommendations', 'Resource allocation optimization'],
+        'A web system built for barangay-level governance. It helps local officials monitor residents, view demographic data, and get program recommendations based on community needs.',
+      highlights: ['Resident monitoring and data collection', 'Demographic-based program recommendations', 'Supports local resource planning'],
       tools: [
         { src: '/sql.png', alt: 'SQL' },
         { src: '/python.png', alt: 'Python' },
@@ -66,8 +67,8 @@ export default function ProjectDetails() {
       badge: 'Website',
       title: 'Web-Based Student Academic Performance Monitoring System for Banay-Banay Elementary School',
       description:
-        'A web-based student academic performance monitoring system that provides a centralized platform for academic institutions to monitor and manage student performance in real-time.',
-      highlights: ['Real-time performance tracking', 'Centralized academic data', 'Teacher & admin dashboards'],
+        'A web-based system built for Banay-Banay Elementary School to help teachers and admins track student academic performance. It centralizes grade records and makes it easier to monitor progress over time.',
+      highlights: ['Student performance tracking per subject', 'Centralized grade and record management', 'Separate dashboards for teachers and admins'],
       tools: [
         { src: '/php.png', alt: 'PHP' },
         { src: '/sql.png', alt: 'SQL' },
@@ -82,8 +83,8 @@ export default function ProjectDetails() {
       badge: 'Mobile',
       title: 'BayaScript: Convolutional Neural Networks Driven Character Recognition In a Mobile Application for Learning BayBayin',
       description:
-        'A mobile educational app aimed at promoting the Baybayin script, an ancient Philippine writing system. Features interactive lessons, quizzes, writing exercises, and a notepad with CNN-powered character recognition.',
-      highlights: ['CNN character recognition', 'Interactive lessons & quizzes', 'Baybayin writing exercises'],
+        'A mobile app built to help users learn Baybayin, an ancient Philippine writing system. It includes lessons, quizzes, and a writing pad that uses a CNN model to recognize handwritten Baybayin characters.',
+      highlights: ['CNN-based handwritten character recognition', 'Interactive lessons and quizzes', 'Writing practice with real-time feedback'],
       tools: [
         { src: '/java.png', alt: 'Java' },
         { src: '/python.png', alt: 'Python' },
@@ -94,14 +95,20 @@ export default function ProjectDetails() {
 
   const current = projectDetails[currentIndex];
 
+  const navigate = (newIndex: number) => {
+    setVisible(false);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setVisible(true);
+    }, 150);
+  };
+
   const handleNext = () => {
-    if (currentIndex < projectDetails.length - 1)
-      setTimeout(() => setCurrentIndex(currentIndex + 1), 150);
+    if (currentIndex < projectDetails.length - 1) navigate(currentIndex + 1);
   };
 
   const handlePrevious = () => {
-    if (currentIndex > 0)
-      setTimeout(() => setCurrentIndex(currentIndex - 1), 150);
+    if (currentIndex > 0) navigate(currentIndex - 1);
   };
 
   return (
@@ -115,7 +122,7 @@ export default function ProjectDetails() {
             width={400}
             height={400}
             alt={current.alt}
-            className={`object-contain animate-scaleIn ${current.icon ? 'w-[180px] h-[180px] md:w-[220px] md:h-[220px]' : 'w-full h-full p-10'}`}
+            className={`object-contain transition-opacity duration-150 ${visible ? 'opacity-100' : 'opacity-0'} ${current.icon ? 'w-[180px] h-[180px] md:w-[220px] md:h-[220px]' : 'w-full h-full p-10'}`}
           />
         </div>
 
@@ -179,7 +186,7 @@ export default function ProjectDetails() {
           {projectDetails.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => navigate(index)}
               className={`rounded-full transition-all duration-300 ${index === currentIndex ? 'w-6 h-3 bg-secondary' : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
                 }`}
             />

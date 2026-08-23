@@ -10,16 +10,15 @@ export default function AboutPage() {
     <section>
       <div className='w-full min-h-screen bg-white text-black flex flex-col px-5 pt-16 pb-8 xl:px-20 lg:px-10 overflow-hidden'>
         {/* Header */}
-        <div className='flex flex-col mb-6'>
-          <Certified badge='About' />
-          <Title title='Know More About Me' />
+        <div className='flex flex-col mb-6 animate-slideInUp1'>
+          <Title title='About Me' />
           <Description />
         </div>
 
         {/* Main content — grows to fill space */}
         <div className='flex-1 flex items-center'>
           <div className='grid md:grid-cols-2 gap-6 w-full'>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 animate-slideInUp2'>
               <DetailsTitle title='Education' bg_color='black' />
               <Details
                 title='Bachelor of Science in Computer Science'
@@ -27,14 +26,14 @@ export default function AboutPage() {
                 description='Pamantasan ng Cabuyao(UC)'
               />
             </div>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 animate-slideInRight1'>
               <DetailsTitle title='Specialization' bg_color='black' />
               <div className='relative mt-2'>
                 {[
-                  { title: 'Data Engineering', description: 'Specialized in building automated ETL pipelines using Apache Airflow, optimizing SQL queries, and resolving pipeline issues such as deadlocks.' },
-                  { title: 'Database Management', description: 'Specialized in SQL for querying, joining, and aggregating data from databases.' },
-                  { title: 'Statistical Analysis', description: 'Specialized in using tools like Excel and Python libraries for statistical calculations.' },
-                  { title: 'Data Visualization', description: 'Specialized in presenting data visually using graphs, charts, and dashboards.' },
+                  { title: 'Data Engineering', description: 'Building and maintaining ETL pipelines with Apache Airflow, writing SQL queries, and keeping data flowing without issues.' },
+                  { title: 'Database Management', description: 'Working with relational databases daily: querying, joining, and structuring data to support reporting and analysis.' },
+                  { title: 'Statistical Analysis', description: 'Using Python and Excel to explore datasets, spot trends, and back up decisions with numbers.' },
+                  { title: 'Data Visualization', description: 'Creating dashboards in Grafana that make it easy for anyone to read and act on the data.' },
                 ].map((item, index, arr) => (
                   <div key={index} className='relative flex gap-4 pb-6'>
                     <div className='flex flex-col items-center'>

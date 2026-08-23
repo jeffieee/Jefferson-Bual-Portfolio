@@ -15,20 +15,20 @@ export default function Footer() {
       {/* Contact page */}
       <div className='w-full min-h-screen bg-bg_primary flex flex-col px-5 pt-16 pb-8 xl:px-20 lg:px-10'>
         {/* Header */}
-        <div className='mb-8'>
+        <div className='mb-8 animate-slideInUp1'>
           <Certified badge='Contact' />
-          <Title title="Let's Work Together" />
+          <Title title='Get in Touch' />
           <p className='text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] text-gray-500'>
-            Feel free to reach out — I am open to opportunities, collaborations, and conversations.
+            I&apos;m open to job opportunities, collaborations, or just a quick conversation. Don&apos;t hesitate to reach out.
           </p>
         </div>
 
         {/* Centered contact info */}
         <div className='flex-1 flex items-center justify-center'>
-          <div className='flex flex-col items-center gap-8'>
+          <div className='flex flex-col items-center gap-8 animate-slideInUp2'>
             <div className='flex flex-col gap-5'>
               {contactItems.map((item, i) => (
-                <div key={i} className='flex items-center gap-4'>
+                <div key={i} style={{ animationDelay: `${i * 0.1 + 0.3}s` }} className='flex items-center gap-4 animate-fadeIn1 [animation-fill-mode:both]'>
                   <div className='w-9 h-9 rounded-full border-2 border-secondary flex items-center justify-center shrink-0'>
                     {item.icon}
                   </div>

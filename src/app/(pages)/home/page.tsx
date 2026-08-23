@@ -48,13 +48,12 @@ export default function LandingPage() {
             </div>
 
             <p className='text-[11px] md:text-[12px] lg:text-[13px] text-gray-500 leading-6 max-w-md animate-slideInLeft4'>
-              Junior Data Analyst with hands-on experience building automated ETL pipelines,
-              optimizing SQL queries, and delivering actionable insights through data visualization.
+              Junior Data Analyst with experience in ETL pipelines, SQL, and data reporting. I focus on keeping data clean, processes reliable, and outputs clear.
             </p>
 
             <div className='flex flex-col gap-4 animate-scaleIn'>
               <Link
-                href={'#service-page'}
+                href={'#about-page'}
                 className='w-fit bg-secondary flex items-center justify-center gap-2 px-6 py-3 hover:bg-button_hover text-white transition-all transform hover:scale-105 duration-300 rounded-lg text-[13px] font-semibold'>
                 Get Started
                 <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' className='size-5'>
@@ -68,7 +67,7 @@ export default function LandingPage() {
           {/* Right — profile image */}
           <div className='hidden md:flex w-full justify-center items-center'>
             {/* Outer wrapper with overflow visible so neuron lines extend outside */}
-            <div className='relative flex justify-center items-center w-full max-w-[480px] xl:max-w-[560px]'>
+            <div className='relative flex justify-center items-center w-full max-w-[560px] xl:max-w-[680px]'>
               {/* Glow blob */}
               <div className='absolute w-[360px] h-[360px] xl:w-[440px] xl:h-[440px] rounded-full bg-secondary/10 blur-3xl -z-10' />
               {/* Accent rings */}
@@ -81,16 +80,16 @@ export default function LandingPage() {
                 width={560}
                 height={0}
                 alt='profile'
-                className='animate-scaleIn relative z-0 w-full h-auto transition-transform duration-500 hover:scale-105 cursor-pointer'
+                className='animate-scaleIn relative z-0 w-full h-auto transition-transform duration-500 hover:scale-105 cursor-pointer p-6'
               />
 
-              {/* Stat labels — bottom right of image */}
-              <div className='absolute bottom-8 -right-6 flex items-center gap-4 animate-scaleIn z-20'>
+              {/* Stat labels — right side of image */}
+              <div className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-full pl-4 flex flex-col gap-4 z-20 opacity-0 animate-[fadeIn_0.5s_ease-out_1s_forwards]'>
                 <div className='flex flex-col items-center'>
                   <p className='text-[20px] font-extrabold text-secondary leading-none'>{experienceLabel}</p>
                   <p className='text-[10px] font-semibold text-gray-400 leading-none mt-1'>Experience</p>
                 </div>
-                <div className='w-[1.5px] h-8 bg-secondary/40' />
+                <div className='w-full h-[1.5px] bg-secondary/40' />
                 <div className='flex flex-col items-center'>
                   <p className='text-[20px] font-extrabold text-secondary leading-none'>{projectCount}</p>
                   <p className='text-[10px] font-semibold text-gray-400 leading-none mt-1'>Projects</p>

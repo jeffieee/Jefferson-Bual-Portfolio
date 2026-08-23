@@ -1,6 +1,7 @@
 'use client';
-import { FaGithub, FaFacebook } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa6';
+import { MdEmail } from 'react-icons/md';
 
 export default function Socials() {
   return (
@@ -9,7 +10,7 @@ export default function Socials() {
         <div className='rounded-full p-2 hover:bg-bg_hover duration-300'>
           <FaGithub
             size={25}
-            onClick={() => window.open('https://github.com/jeffieee')}
+            onClick={() => window.open('https://github.com/itsmenikoru')}
           />
         </div>
       </div>
@@ -23,13 +24,11 @@ export default function Socials() {
           />
         </div>
       </div>
-      <div className='transition-all transform hover:px-6 hover:scale-125  duration-300 '>
+      <div className='transition-all transform hover:px-6 hover:scale-125 duration-300'>
         <div className='rounded-full p-2 hover:bg-bg_hover duration-300'>
-          <FaFacebook
+          <MdEmail
             size={25}
-            onClick={() =>
-              window.open('https://www.facebook.com/FunTea12/')
-            }
+            onClick={() => window.open('mailto:bualjefferson64@gmail.com')}
           />
         </div>
       </div>

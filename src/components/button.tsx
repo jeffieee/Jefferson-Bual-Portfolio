@@ -4,7 +4,7 @@ export default function Button() {
     <button
       onClick={() =>
         window.open(
-          'https://drive.google.com/uc?export=download&id=1Kc-JUMr8qPvlkUt-ySApAqAe0YudgjgL'
+          'https://drive.google.com/uc?export=download&id=1EGbOSTQVplA7WFkQXdHmyTHxUlTn-ut-'
         )
 
       }

@@ -1,8 +1,6 @@
 import Certified from '@/components/certified';
-import Description from '@/components/description';
 import Title from '@/components/title';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function ServicesPage() {
   const services_card: { src: string; alt: string; title: string; details: string[] }[] = [
@@ -35,11 +33,11 @@ export default function ServicesPage() {
     <section>
       <div className='w-full min-h-screen bg-bg_secondary flex flex-col px-5 pt-16 pb-8 xl:px-20 lg:px-10 overflow-hidden'>
         {/* Header */}
-        <div className='w-full mb-8'>
-          <Certified badge='Best Services' />
+        <div className='w-full mb-8 animate-slideInUp1'>
+          <Certified badge='What I Do' />
           <Title title='Data Engineering & Analysis' />
-          <p className='sm:text-[11px] md:text-[12px] lg:text-[13px] text-[10px]'>
-            I build end-to-end data pipelines using Apache Airflow to automate ETL workflows and visualize real-time metrics through Grafana dashboards. I turn raw data into actionable insights through statistical analysis, custom reporting, and backend scripting.
+          <p className='sm:text-[11px] md:text-[12px] lg:text-[13px] text-[10px] text-gray-600 leading-6'>
+            I build and maintain data pipelines, manage databases, and turn raw data into reports people can actually use.
           </p>
         </div>
 
@@ -49,7 +47,8 @@ export default function ServicesPage() {
             {services_card.map((service, index) => (
               <div
                 key={index}
-                className='bg-[#F7F7F7] w-full rounded-lg grid grid-rows-2 grid-cols-none md:grid-cols-2 md:grid-rows-none lg:grid-cols-none lg:grid-rows-2 place-items-center transition-all transform hover:scale-105 duration-300'>
+                style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
+                className='animate-slideInUp1 [animation-fill-mode:both] bg-[#F7F7F7] w-full rounded-lg grid grid-rows-2 grid-cols-none md:grid-cols-2 md:grid-rows-none lg:grid-cols-none lg:grid-rows-2 place-items-center transition-all transform hover:scale-105 duration-300'>
                 <div className='flex md:hidden lg:flex justify-center items-center overflow-hidden h-[20svh] w-full'>
                   <div className='transition-all transform hover:scale-110 duration-300'>
                     <Image src={service.src} width={120} height={120} alt={service.alt} className='w-[120px] h-[120px] object-contain' />
@@ -75,19 +74,7 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* CTA bar — pinned to bottom */}
-        <div className='mt-auto pt-4 border-t border-gray-200'>
-          <div className='py-3 flex flex-row justify-between items-center gap-3 w-full'>
-            <h1 className='font-bold text-[11px] sm:text-[13px] md:text-[16px]'>
-              Lets Talk About Your Project
-            </h1>
-            <Link
-              href={'#footer-page'}
-              className='bg-secondary w-fit p-3 text-[11px] rounded-md text-white hover:bg-button_hover transition-all duration-300'>
-              Contact me
-            </Link>
-          </div>
-        </div>
+
       </div>
     </section>
   );
