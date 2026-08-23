@@ -1,9 +1,10 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
-export default function InDevelopment() {
+function InDevelopmentContent() {
     const searchParams = useSearchParams();
     const project = searchParams.get("project");
 
@@ -127,5 +128,13 @@ export default function InDevelopment() {
             </div>
 
         </main>
+    );
+}
+
+export default function InDevelopment() {
+    return (
+        <Suspense>
+            <InDevelopmentContent />
+        </Suspense>
     );
 }
