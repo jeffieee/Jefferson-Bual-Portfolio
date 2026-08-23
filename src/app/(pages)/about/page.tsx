@@ -8,58 +8,59 @@ import Title from '@/components/title';
 export default function AboutPage() {
   return (
     <section>
-      <div className=' md:mt-0 w-full h-fit xl:h-svh bg-white text-black grid grid-rows-4 gap-5 justify-center items-center xl:p-20 lg:p-5 p-5 overflow-hidden'>
-        <div className='flex flex-col gap-5 sm:gap-16 md:gap-18 lg:gap-20 w-full row-span-4 md:row-span-3'>
-          <div className='flex flex-col'>
-            <Certified badge='About' />
-            <Title title='Know More About Me' />
-            <Description />
-          </div>
-          <div className='flex items-center justify-center row-span-3'>
-            <div className='grid md:grid-cols-2 flex-row gap-3'>
-              <div className='flex flex-col gap-3'>
-                <DetailsTitle title='Education' bg_color='black' />
-                <Details
-                  title='Bachelor of Science in Computer Science'
-                  year='2020 - 2024'
-                  description='Pamantasan ng Cabuyao(UC)'
-                />
-                
-              </div>
-              <div className='flex flex-col gap-3 '>
-                <DetailsTitle title='Specialization' bg_color='black' />
-                <Details
-                  title='Database Management'
-                  isHide='true'
-                  description='Specialized in SQL for querying, joining, and aggregating data from databases.'
-                />
-                <Details
-                  title='Statistical Analysis'
-                  isHide='true'
-                  description='Specialized in using tools like Excel and Python libararies for statistical calculations.'
-                />
-                <Details
-                  title='Data Visiualization'
-                  isHide='true'
-                  description='Specialized in presenting data visually using graphs, charts, and dashboards.'
-                />
-                
-                
-                
-                
+      <div className='w-full min-h-screen bg-white text-black flex flex-col px-5 pt-16 pb-8 xl:px-20 lg:px-10 overflow-hidden'>
+        {/* Header */}
+        <div className='flex flex-col mb-6'>
+          <Certified badge='About' />
+          <Title title='Know More About Me' />
+          <Description />
+        </div>
+
+        {/* Main content — grows to fill space */}
+        <div className='flex-1 flex items-center'>
+          <div className='grid md:grid-cols-2 gap-6 w-full'>
+            <div className='flex flex-col gap-4'>
+              <DetailsTitle title='Education' bg_color='black' />
+              <Details
+                title='Bachelor of Science in Computer Science'
+                year='2020 - 2024'
+                description='Pamantasan ng Cabuyao(UC)'
+              />
+            </div>
+            <div className='flex flex-col gap-4'>
+              <DetailsTitle title='Specialization' bg_color='black' />
+              <div className='relative mt-2'>
+                {[
+                  { title: 'Data Engineering', description: 'Specialized in building automated ETL pipelines using Apache Airflow, optimizing SQL queries, and resolving pipeline issues such as deadlocks.' },
+                  { title: 'Database Management', description: 'Specialized in SQL for querying, joining, and aggregating data from databases.' },
+                  { title: 'Statistical Analysis', description: 'Specialized in using tools like Excel and Python libraries for statistical calculations.' },
+                  { title: 'Data Visualization', description: 'Specialized in presenting data visually using graphs, charts, and dashboards.' },
+                ].map((item, index, arr) => (
+                  <div key={index} className='relative flex gap-4 pb-6'>
+                    <div className='flex flex-col items-center'>
+                      <div className='w-3 h-3 rounded-full bg-secondary mt-1 z-10 shrink-0' />
+                      {index < arr.length - 1 && (
+                        <div className='w-[2px] bg-secondary flex-1 mt-1' />
+                      )}
+                    </div>
+                    <div className='flex flex-col gap-1'>
+                      <h1 className='font-bold text-[12px] sm:text-[14px]'>{item.title}</h1>
+                      <p className='text-[10px] sm:text-[11px] md:text-[12px] leading-5 text-gray-600'>{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-        <div className='lg:relative h-full  w-full lg:mt-20'>
-          <div className='flex flex-col items-center w-full lg:absolute lg:bottom-0'>
-            <div className='bg-bg_primary h-[1px] w-full'></div>
-            <div className=' rounded-lg mb-5 xl:mb-0 h-fit p-3 md:p-5 flex flex-row justify-between items-center gap-3 w-full'>
-              <h1 className='font-bold text-[11px] sm:text-[13px] md:text-[16px] lg:text-[16px]'>
-                Curriculum Vitae
-              </h1>
-              <Button />
-            </div>
+
+        {/* CV bar — pinned to bottom */}
+        <div className='mt-auto pt-4 border-t border-gray-100'>
+          <div className='rounded-lg h-fit py-3 flex flex-row justify-between items-center gap-3 w-full'>
+            <h1 className='font-bold text-[11px] sm:text-[13px] md:text-[16px]'>
+              Curriculum Vitae
+            </h1>
+            <Button />
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import Certified from './certified';
 import { useState } from 'react';
-import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function ProjectDetails() {
@@ -11,260 +10,189 @@ export default function ProjectDetails() {
   const projectDetails = [
     {
       id: 1,
-      src: '/ecommerce.png',
-      alt: 'ecommerce',
-      badge: 'Data Analytics',
-      title: 'E-Commerce Insights: An Exploratory Data Analysis on Purchasing Trends',
-      description: 'Performed an exploratory data analysis on an e-commerce dataset using Python, focusing on data cleaning and extracting insights into customer behavior and sales trends. Developed visualizations, including bar charts, pie charts, and time series plots, utilizing Python libraries like Matplotlib and Seaborn to present key findings. Identified demographic and purchasing patterns to guide targeted marketing efforts based on gender, age, and location, providing actionable insights for optimizing sales strategies.',
+      src: '/airflow-icon.svg',
+      alt: 'airflow',
+      icon: true,
+      badge: 'In Development',
+      title: 'Airflow Data Pipeline',
+      description:
+        'An automated data pipeline built with Apache Airflow that fetches free nature-related APIs — including climate, earthquake, and other environmental data — orchestrates ETL workflows, schedules tasks, and loads processed data into a MySQL database for downstream analytics and monitoring.',
+      highlights: ['Nature API ingestion (climate, earthquake, environment)', 'Automated ETL scheduling', 'Loads processed data into MySQL'],
       tools: [
-        { src: '/python.png', alt: 'python_icon' },
-        { src: '/excel.png', alt: 'excel' },
-        { src: '/github.png', alt: 'github' },
-        { src: '/gpt.png', alt: 'chatgpt' },
+        { src: '/airflow-icon.svg', alt: 'Airflow' },
+        { src: '/python.png', alt: 'Python' },
+        { src: '/mysql-logo.svg', alt: 'MySQL' },
+        { src: '/github.png', alt: 'GitHub' },
       ],
     },
-
     {
       id: 2,
-      src: '/healthcare.png',
-      alt: 'healthcare',
-      badge: 'Data Analytics',
-      title: 'Healthcare Facility Dashboard: Key Insights',
-      description: 'This Healthcare Analytics Dashboard, built using Power BI, offers a clear and interactive view of patient data, admissions, and financial metrics. Utilizing data exploration and thorough data cleaning techniques, it enables healthcare administrators and decision-makers to analyze patient demographics, track admission trends, and monitor billing across hospitals. With KPIs, customizable filters, and insightful visualizations, the dashboard supports data-driven decisions to optimize healthcare performance.',
+      src: '/grafana-icon.svg',
+      alt: 'grafana-dashboard',
+      icon: true,
+      badge: 'In Development',
+      title: 'Grafana Monitoring Dashboard',
+      description:
+        'A collection of interactive Grafana dashboards visualizing data from multiple sources — including the Airflow nature data pipeline and other database projects. Showcases real-time metrics, environmental trends, and analytics panels across all connected datasets.',
+      highlights: ['Visualizes Airflow nature pipeline data', 'Connected to multiple database sources', 'Real-time metrics & analytics panels'],
       tools: [
-        { src: '/sql.png', alt: 'sql' },
-        { src: '/python.png', alt: 'python_icon' },
-        { src: '/excel.png', alt: 'excel' },
-        { src: '/power.png', alt: 'powerbi' },
-        { src: '/github.png', alt: 'github' },
-        { src: '/gpt.png', alt: 'chatgpt' },
+        { src: '/grafana-icon.svg', alt: 'Grafana' },
+        { src: '/mysql-logo.svg', alt: 'MySQL' },
+        { src: '/github.png', alt: 'GitHub' },
       ],
     },
     {
       id: 3,
-      src: '/mpox.png',
-      alt: 'mpox',
-      badge: 'Data Analytics',
-      title: 'Monkeypox Outbreak Data Analysis',
-      description: 'This dashboard presents insights from the Monkeypox outbreak, featuring clean and well-explored data on infection trends, regions affected, and demographic details. It provides clear visualizations and charts to help track the virus spread and impact, offering valuable information for analysis and decision-making.',
+      src: '/web_project2_img.png',
+      alt: 'web_project2_img',
+      icon: false,
+      badge: 'Website',
+      title: 'CityAssist: Local Resident Monitoring and Demographic-Based Program Recommendation System',
+      description:
+        'The Data-Driven Barangay Monitoring System improves local governance by utilizing real-time data collection and analysis, enhancing decision-making, ensuring efficient resource allocation, and improving community services.',
+      highlights: ['Real-time data collection', 'Demographic-based recommendations', 'Resource allocation optimization'],
       tools: [
-        { src: '/sql.png', alt: 'sql' },
-        { src: '/python.png', alt: 'python_icon' },
-        { src: '/excel.png', alt: 'excel' },
-        { src: '/power.png', alt: 'powerbi' },
-        { src: '/github.png', alt: 'github' },
-        { src: '/gpt.png', alt: 'chatgpt' },
+        { src: '/sql.png', alt: 'SQL' },
+        { src: '/python.png', alt: 'Python' },
+        { src: '/excel.png', alt: 'Excel' },
+        { src: '/github.png', alt: 'GitHub' },
       ],
     },
     {
       id: 4,
-      src: '/web_project2_img.png',
-      alt: 'web_project2_img',
-      badge: 'Website',
-      title: 'CityAssist: Local Resident Monitoring and Demographic-Based Program Recommendation System',
-      description:
-        'The Data-Driven Barangay Monitoring System improves local governance by utilizing real-time data collection and analysis, enhancing decision-making, ensuring efficient resource allocation, and improving community services, fostering transparency, accountability, and enhancing community welfare and safety.',
-      tools: [
-        { src: '/sql.png', alt: 'laravel' },
-        { src: '/python.png', alt: 'python_icon' },
-        { src: '/excel.png', alt: 'excel' },
-        { src: '/power.png', alt: 'powerbi' },
-        { src: '/github.png', alt: 'github' },
-        { src: '/gpt.png', alt: 'chatgpt' },
-      ],
-    },
-    
-    {
-      id: 5,
-      src: '/rnn_model.png',
-      alt: 'rnn_model',
-      badge: 'Model',
-      title: 'SimpleRNN Demographic Insight Model',
-      description:
-        ' The simpleRNN-based model was designed to analyze the demographic data of urban residents and generate tailored program recommendations. The model leverages recurrent neural networks to identify patterns and insights from demographic information, facilitating personalized program suggestions that cater to the specific needs of various resident groups.',
-      tools: [
-        
-        { src: '/python.png', alt: 'python' },
-        { src: '/sql.png', alt: 'sql' },
-        { src: '/excel.png', alt: 'excel' },
-        { src: '/github.png', alt: 'github' },
-        { src: '/gpt.png', alt: 'chatgpt' },
-       
-      ],
-    },
-    // {
-    //   id: 3,
-    //   src: '/cnn_model.png',
-    //   alt: 'cnn_model',
-    //   badge: 'Model',
-    //   title: 'LeNet with Incecption Model for Learning Baybayin Script from Scratch',
-    //   description:
-    //     ' Creating a Baybayin character recognition model from scratch involves using a combination of LeNet and Inception architectures. LeNets simplicity and Inceptions powerful feature extraction are combined to build a neural network that can accurately recognize and classify Baybayin characters. This hybrid model leverages LeNet for basic image processing and Inception modules for detailed feature analysis, making it effective in learning and identifying the unique patterns of Baybayin script.',
-    //   tools: [
-        
-    //     { src: '/python.png', alt: 'python' },
-    //     { src: '/excel.png', alt: 'excel' },
-    //     { src: '/github.png', alt: 'github' },
-       
-    //   ],
-    // },
-    {
-      id: 6,
       src: '/web_project1_img.png',
       alt: 'web-project1_img',
+      icon: false,
       badge: 'Website',
       title: 'Web-Based Student Academic Performance Monitoring System for Banay-Banay Elementary School',
       description:
-        ' A web-based student academic performance monitoring systems goal is to provide a centralized platform for academic institutions to monitor and manage their students academic performance. The system provides real-time data on student performance and progress to teachers, administrators, and other authorized personnel, allowing them to make informed decisions about student learning and support.',
+        'A web-based student academic performance monitoring system that provides a centralized platform for academic institutions to monitor and manage student performance in real-time.',
+      highlights: ['Real-time performance tracking', 'Centralized academic data', 'Teacher & admin dashboards'],
       tools: [
-        
-        { src: '/php.png', alt: 'php' },
-        { src: '/sql.png', alt: 'sql' },
-        { src: '/github.png', alt: 'github' },
-        { src: '/gpt.png', alt: 'chatgpt' },
-       
+        { src: '/php.png', alt: 'PHP' },
+        { src: '/sql.png', alt: 'SQL' },
+        { src: '/github.png', alt: 'GitHub' },
       ],
     },
     {
-      id: 7,
+      id: 5,
       src: '/baya-mobile-project.png',
       alt: 'baya-mobile-project',
+      icon: false,
       badge: 'Mobile',
       title: 'BayaScript: Convolutional Neural Networks Driven Character Recognition In a Mobile Application for Learning BayBayin',
       description:
-        'A mobile educational app aimed at promoting the Baybayin script, an ancient Philippine writing system. The app features interactive lessons, quizzes, writing exercises, and a notepad, using Convolutional Neural Networks for improved character recognition.',
+        'A mobile educational app aimed at promoting the Baybayin script, an ancient Philippine writing system. Features interactive lessons, quizzes, writing exercises, and a notepad with CNN-powered character recognition.',
+      highlights: ['CNN character recognition', 'Interactive lessons & quizzes', 'Baybayin writing exercises'],
       tools: [
-        { src: '/java.png', alt: 'java' },
-        { src: '/python.png', alt: 'python_icon' },
-        { src: '/github.png', alt: 'github' },
-        { src: '/gpt.png', alt: 'chatgpt' },
+        { src: '/java.png', alt: 'Java' },
+        { src: '/python.png', alt: 'Python' },
+        { src: '/github.png', alt: 'GitHub' },
       ],
     },
-   
   ];
 
+  const current = projectDetails[currentIndex];
+
   const handleNext = () => {
-    if (currentIndex < projectDetails.length - 1) {
-      setTimeout(() => {
-        setCurrentIndex(currentIndex + 1);
-      }, 300);
-    }
+    if (currentIndex < projectDetails.length - 1)
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 150);
   };
 
   const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setTimeout(() => {
-        setCurrentIndex(currentIndex - 1);
-      }, 300);
-    }
+    if (currentIndex > 0)
+      setTimeout(() => setCurrentIndex(currentIndex - 1), 150);
   };
 
   return (
-    <div className='flex flex-col h-full'>
-      <div className='flex flex-col lg:flex-none lg:grid lg:grid-cols-2 gap-3'>
-        <div className='flex w-full items-center justify-center '>
-          <div className='w-[200px] md:w-[400px] lg:w-[400px] '>
-            <Image
-              src={projectDetails[currentIndex].src}
-              width={500}
-              height={0}
-              alt={projectDetails[currentIndex].alt}
-              className=' animate-scaleIn'
-            />
-          </div>
+    <div className='w-full flex flex-col'>
+      {/* Main card */}
+      <div className='flex-1 w-full flex flex-col lg:grid lg:grid-cols-2 gap-8 items-stretch justify-center'>
+        {/* Image */}
+        <div className='flex w-full items-center justify-center bg-gray-50 rounded-xl overflow-hidden h-[300px] md:h-[380px] lg:h-full lg:min-h-[380px]'>
+          <Image
+            src={current.src}
+            width={400}
+            height={400}
+            alt={current.alt}
+            className={`object-contain animate-scaleIn ${current.icon ? 'w-[180px] h-[180px] md:w-[220px] md:h-[220px]' : 'w-full h-full p-10'}`}
+          />
         </div>
-        <div className='h-full flex flex-col gap-2'>
-          <div className='flex flex-col gap-3 w-full'>
-            <Certified badge={projectDetails[currentIndex].badge} />
-            <h1 className='font-semibold xl:text-[25px] '>
-              {projectDetails[currentIndex].title}
-            </h1>
-          </div>
-          <div className='flex '>
-            <li></li>
 
-            <h1 className='text-[11px] xl:text-[16px] leading-7 '>
-              {projectDetails[currentIndex].description}
-            </h1>
-          </div>
-          <div className='w-full flex flex-col gap-5'>
-            <h1 className='font-semibold'>Tools:</h1>
+        {/* Info */}
+        <div className='flex flex-col gap-5 justify-center'>
+          <Certified badge={current.badge} />
+          <h1 className='font-bold text-[16px] xl:text-[22px] leading-snug'>
+            {current.title}
+          </h1>
+          <p className='text-[12px] xl:text-[14px] leading-7 text-gray-600'>
+            {current.description}
+          </p>
 
-            <div className='flex flex-row gap-3 items-center'>
-              {projectDetails[currentIndex].tools.map((tools, index) => (
-                <div
-                  key={index}
-                  className=' transition-all transform hover:px-3 hover:scale-125 duration-300'>
-                  <div className='h-[25px] w-[25px]  flex'>
-                    <Image
-                      src={tools.src}
-                      width={30}
-                      height={0}
-                      alt={tools.alt}
-                    />
+          {/* Highlights */}
+          <div className='flex flex-col gap-2'>
+            <h2 className='font-semibold text-[13px]'>Key Highlights</h2>
+            <ul className='flex flex-col gap-2'>
+              {current.highlights.map((h, i) => (
+                <li key={i} className='flex items-center gap-2 text-[12px] xl:text-[13px] text-gray-600'>
+                  <span className='w-1.5 h-1.5 rounded-full bg-secondary shrink-0' />
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Tools */}
+          <div className='flex flex-col gap-2'>
+            <h2 className='font-semibold text-[13px]'>Tools Used</h2>
+            <div className='flex flex-row gap-4 items-center'>
+              {current.tools.map((tool, i) => (
+                <div key={i} className='group flex flex-col items-center gap-1'>
+                  <div className='transition-transform duration-300 group-hover:scale-125'>
+                    <Image src={tool.src} width={26} height={26} alt={tool.alt} className='object-contain w-[26px] h-[26px]' />
                   </div>
+                  <span className='text-[10px] text-gray-400 group-hover:text-secondary transition-colors duration-300'>{tool.alt}</span>
                 </div>
               ))}
             </div>
-            <Link
-              href={`/project/${projectDetails[currentIndex].id}`}
-              className='p-3 w-fit text-[11px] border-secondary border-2 text-black rounded-lg  mb-10 lg:mb-0 hover:bg-button_hover transition-all transform hover:px-6 hover:scale-100 duration-300'>
-              See project
-            </Link>
           </div>
+
+          <Link
+            href={`/project/${current.id}`}
+            className='w-fit px-4 py-2 text-[11px] font-semibold border-2 border-secondary text-black rounded-lg hover:bg-secondary hover:text-white transition-all duration-300'>
+            View Project →
+          </Link>
         </div>
       </div>
-      {/* pagination */}
-      <div className='Pagination relative h-full w-full mt-10'>
-        <div className='absolute bottom-0 w-full h-fit'>
-          <div className='flex flex-row justify-center items-center '>
-            <nav className='flex items-center gap-x-1' aria-label='Pagination'>
-              <button
-                type='button'
-                className='min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none'
-                aria-label='Previous'
-                onClick={handlePrevious}
-                disabled={currentIndex === 0}>
-                <svg
-                  className='shrink-0 size-3.5'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'>
-                  <path d='m15 18-6-6 6-6'></path>
-                </svg>
-                <span>Previous</span>
-              </button>
-              <h1>{currentIndex + 1}</h1>
-              <button
-                type='button'
-                className='min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none'
-                aria-label='Next'
-                onClick={handleNext}
-                disabled={currentIndex === projectDetails.length - 1}>
-                <span>Next</span>
-                <svg
-                  className='shrink-0 size-3.5'
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'>
-                  <path d='m9 18 6-6-6-6'></path>
-                </svg>
-              </button>
-            </nav>
-          </div>
+
+      {/* Navigation */}
+      <div className='flex flex-row justify-center items-center gap-4 w-full pt-6 mt-auto border-t border-gray-100'>
+        <button
+          onClick={handlePrevious}
+          disabled={currentIndex === 0}
+          className='group flex items-center justify-center w-8 h-8 rounded-full border-2 border-secondary text-black transition-all duration-300 hover:bg-secondary hover:text-white disabled:opacity-30 disabled:pointer-events-none'>
+          <svg className='size-4 transition-transform duration-300 group-hover:-translate-x-1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round'>
+            <path d='m15 18-6-6 6-6'></path>
+          </svg>
+        </button>
+        <div className='flex gap-2 items-center'>
+          {projectDetails.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`rounded-full transition-all duration-300 ${index === currentIndex ? 'w-6 h-3 bg-secondary' : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+                }`}
+            />
+          ))}
         </div>
+        <button
+          onClick={handleNext}
+          disabled={currentIndex === projectDetails.length - 1}
+          className='group flex items-center justify-center w-8 h-8 rounded-full border-2 border-secondary text-black transition-all duration-300 hover:bg-secondary hover:text-white disabled:opacity-30 disabled:pointer-events-none'>
+          <svg className='size-4 transition-transform duration-300 group-hover:translate-x-1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round'>
+            <path d='m9 18 6-6-6-6'></path>
+          </svg>
+        </button>
       </div>
     </div>
   );

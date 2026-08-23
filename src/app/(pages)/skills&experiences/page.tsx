@@ -1,10 +1,9 @@
+'use client';
 import Certified from '@/components/certified';
-import Details from '@/components/details_container';
 import DetailsTitle from '@/components/details_title';
-import ProgressBar from '@/components/progress_bar';
 import Title from '@/components/title';
 import Image from 'next/image';
-import { text } from 'stream/consumers';
+import { SiGithub, SiGrafana, SiJavascript, SiMicrosoftexcel, SiMysql, SiPhp } from 'react-icons/si';
 
 export default function SkillsExpPage() {
   const isDisabled = true;
@@ -12,151 +11,79 @@ export default function SkillsExpPage() {
   const experience = [
     {
       title: 'Junior Data Analyst',
-      year: 'Nov 2024 -  Present',
-      description: 'Developed automated reporting solutions and performed efficient ETL (Extract, Transform, Load) processes. Focused on transforming raw data into actionable insights through custom report development, backend scripting, and data analysis.'
+      company: 'PhilWeb Corporation',
+      year: 'Nov 2024 - Present',
+      description: 'Developed automated reporting solutions and performed efficient ETL processes. Focused on transforming raw data into actionable insights through custom report development, backend scripting, and data analysis.',
     },
     {
-      title: 'Backend Developer Intern at Pixel8 Web Solutions & Consultancy Inc.',
-      year: 'Jan 2024 -  2021',
-       description: 'Developed and tested APIs to handle success and error responses, and collaborated with the team to ensure seamless integration.'
-    },
-    {
-      title: 'OIC - Reshipper at Lazada',
-      year: 'Mar 2020 - Jan 2021',
-      description: 'Managed a team and tracked performance using Excel to maintain transactions and monitor KPIs.',
+      title: 'Backend Developer Intern',
+      company: 'Pixel8 Web Solutions & Consultancy Inc.',
+      year: 'Jan 2024 - 2021',
+      description: 'Developed and tested APIs to handle success and error responses, and collaborated with the team to ensure seamless integration.',
     },
   ];
-  const frameworks = [
-     {
-      src: '/python.png',
-      alt: 'react',
-      title: 'Python',
-      description:
-        '',
-    },
-    {
-      src: '/airflow(4).png',
-      alt: 'react',
-      title: 'Apache Airflow',
-      description:
-        '',
-    },
-    {
-      src: '/java-script.png',
-      alt: 'react',
-      title: 'JS',
-      description:
-        '',
-    },
-    {
-      src: '/php.png',
-      alt: 'react',
-      title: 'Php',
-      description:
-        '',
-    },
-    {
-      src: '/sql.png',
-      alt: 'react',
-      title: 'MySQL',
-      description:
-        '',
-    },
-    {
-      src: '/excel.png',
-      alt: 'react',
-      title: 'Microsoft Excel',
-      description:
-        '',
-    },
-    {
-      src: '/power.png',
-      alt: 'react',
-      title: 'Power BI',
-      description:
-        '',
-    },
-    
-    // {
-    //   src: '/postgre.png',
-    //   alt: 'react',
-    //   title: 'PostgreSQL',
-    //   description:
-    //     '',
-    // },
-    // {
-    //   src: '/gpt.png',
-    //   alt: 'react',
-    //   title: 'Chat GPT',
-    //   description:
-    //     '',
-    // },
-    {
-      src: '/github.png',
-      alt: 'react',
-      title: 'Github',
-      description:
-        '',
-    },
-    // {
-    //   src: '/vs.png',
-    //   alt: 'react',
-    //   title: 'Visual Studio Code',
-    //   description:
-    //     '',
-    // },
+  const frameworks: { icon: React.ReactNode; title: string }[] = [
+    { icon: <Image src='/python-logo.svg' width={40} height={40} alt='python' className='w-[40px] h-[40px] object-contain' />, title: 'Python' },
+    { icon: <Image src='/airflow-fan.png' width={40} height={40} alt='airflow' className='w-[40px] h-[40px] object-contain' />, title: 'Apache Airflow' },
+    { icon: <SiJavascript size={40} className='text-[#F7DF1E]' />, title: 'JavaScript' },
+    { icon: <SiPhp size={40} className='text-[#777BB4]' />, title: 'PHP' },
+    { icon: <SiMysql size={40} className='text-[#00758F]' />, title: 'MySQL' },
+    { icon: <SiMicrosoftexcel size={40} className='text-[#217346]' />, title: 'Microsoft Excel' },
+    { icon: <SiGrafana size={40} className='text-[#F46800]' />, title: 'Grafana' },
+    { icon: <SiGithub size={40} className='text-[#181717]' />, title: 'Github' },
   ];
 
   return (
     <section>
-      <div className='w-full h-fit md:h-svh bg-bg_tertiary text-white flex flex-col gap-5 justify-center items-center xl:p-20 lg:p-10 p-5 overflow-hidden'>
-        <div className='flex flex-col gap-3 sm:gap-5 md:gap-10 lg:gap-20 w-full'>
-          <div>
-            <Certified badge='Skills and Experiences' />
-            <Title title='Check My Skills and Work Experiences' />
-          </div>
-          <div className='flex flex-col md:grid md:grid-cols-2 gap-5'>
-            <div className='flex flex-col gap-3 md:items-center'>
-              <div className='flex flex-col gap-3'>
-                <DetailsTitle title='Work Experience' bg_color='white' />
+      <div className='w-full min-h-screen bg-white text-black flex flex-col px-5 pt-16 pb-8 xl:px-20 lg:px-10 overflow-hidden'>
+        {/* Header */}
+        <div className='mb-8'>
+          <Certified badge='Skills and Experiences' />
+          <Title title='Check My Skills and Work Experiences' />
+        </div>
+
+        {/* Content — grows to fill remaining space */}
+        <div className='flex-1 flex items-center'>
+          <div className='flex flex-col md:grid md:grid-cols-2 gap-8 w-full'>
+            <div className='flex flex-col gap-4'>
+              <DetailsTitle title='Work Experience' bg_color='black' />
+              <div className='relative mt-2'>
                 {experience.map((exp, index) => (
-                  <div key={index}>
-                    <Details
-                      title={exp.title}
-                      year={exp.year}
-                      description={exp.description}
-                    />
+                  <div key={index} className='relative flex gap-4 pb-8'>
+                    <div className='flex flex-col items-center'>
+                      <div className='w-3 h-3 rounded-full bg-secondary mt-1 z-10 shrink-0' />
+                      {index < experience.length - 1 && (
+                        <div className='w-[2px] bg-secondary flex-1 mt-1' />
+                      )}
+                    </div>
+                    <div className='flex flex-col gap-1'>
+                      <h1 className='font-bold text-[12px] sm:text-[14px]'>{exp.title}</h1>
+                      <h1 className='text-secondary text-[11px] sm:text-[12px] font-medium'>{exp.company}</h1>
+                      <h1 className='text-gray-400 text-[10px] sm:text-[11px]'>{exp.year}</h1>
+                      <p className='text-[10px] sm:text-[11px] md:text-[12px] leading-5 text-gray-600'>{exp.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-           <div className=''>
-              <DetailsTitle title='Programming Languages and Tools' bg_color='white' />
-              <div className='grid grid-cols-4 gap-3 h-full mt-3'>
-              {frameworks.map((data, index) => (
-                <div
-                  key={index}
-                  className='bg-[#575757] rounded-md flex flex-col justify-center items-center p-3'
-                >
+            <div className='flex flex-col gap-4'>
+              <DetailsTitle title='Programming Languages and Tools' bg_color='black' />
+              <div className='grid grid-cols-4 gap-4 mt-2'>
+                {frameworks.map((data, index) => (
                   <div
-                    className={`flex items-center justify-center ${
-                      data.title === 'Apache Airflow' ? 'w-[80px] h-[80px] group' : 'w-[25px] h-[80px] group'
-                    }`}
+                    key={index}
+                    className='group relative bg-gray-100 hover:bg-gray-200 rounded-md flex flex-col justify-center items-center gap-2 p-4 cursor-pointer transition-all duration-300'
                   >
-                    <Image
-                      src={data.src}
-                      width={data.title === 'Apache Airflow' ? 80 : 60}
-                      height={data.title === 'Apache Airflow' ? 80 : 60}
-                      alt={data.alt}
-                      className="object-contain transition-transform duration-300 group-hover:scale-125"
-                    />
+                    <div className='flex items-center justify-center w-[40px] h-[40px] transition-transform duration-300 group-hover:scale-125'>
+                      {data.icon}
+                    </div>
+                    <span className='text-[9px] font-semibold text-gray-500 group-hover:text-secondary text-center transition-colors duration-300'>
+                      {data.title}
+                    </span>
                   </div>
-                </div>
-                
-              ))}
+                ))}
               </div>
             </div>
-
           </div>
         </div>
       </div>

@@ -18,14 +18,14 @@ export default function Home() {
       <section id='/home'>
         <LandingPage />
       </section>
-      <section id='service-page'>
-        <ServicesPage />
+      <section id='project-page'>
+        <ProjectsPage />
       </section>
       <section id='skills-page'>
         <SkillsExpPage />
       </section>
-      <section id='project-page'>
-        <ProjectsPage />
+      <section id='service-page'>
+        <ServicesPage />
       </section>
       <section id='about-page'>
         <AboutPage />

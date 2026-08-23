@@ -6,14 +6,12 @@ import Image from 'next/image';
 export default function ProjectsPage() {
   return (
     <section>
-      <div className=' w-full h-fit xl:h-svh  bg-bg_primary flex flex-col  gap-3 place-items-center xl:p-5 lg:p-5 p-5 overflow-hidden'>
-        <div className='w-full flex flex-col p-5 md:p-10 items-center justify-center'>
-          <div className='w-full'>
-            <Certified badge='Projects' />
-            <Title title='Check Out My Projects' />
-          </div>
+      <div className='w-full min-h-screen bg-bg_primary flex flex-col px-5 pt-16 pb-8 xl:px-20 lg:px-10'>
+        <div className='w-full flex flex-col items-start mb-6'>
+          <Certified badge='Projects' />
+          <Title title='Check Out My Projects' />
         </div>
-        <div className='Content-Container h-full flex justify-center items-center'>
+        <div className='flex-1 flex items-stretch'>
           <ProjectDetails />
         </div>
       </div>

@@ -24,9 +24,14 @@ const config: Config = {
         bg_hover: 'var(--bg-hover)',
       },
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        sora: ['var(--font-sora)', 'sans-serif'],
       },
       keyframes: {
+        blink: {
+          '0%, 50%': { opacity: '1' },
+          '51%, 100%': { opacity: '0' },
+        },
         scaleIn: {
           '0%': { transform: 'scale(0)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },

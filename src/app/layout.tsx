@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Plus_Jakarta_Sans, Sora } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
 
-const mont = Montserrat({ subsets: ['latin'] });
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta' });
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora' });
 
 export const metadata: Metadata = {
   title: 'Bual | Portfolio',
@@ -17,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={mont.className}>{children}</body>
+      <body className={`${jakarta.variable} ${sora.variable} ${jakarta.className}`}>{children}</body>
     </html>
   );
 }

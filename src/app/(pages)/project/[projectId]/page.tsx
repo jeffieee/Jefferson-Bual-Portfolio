@@ -1,19 +1,19 @@
+import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { GoHomeFill } from 'react-icons/go';
+import { project_details } from '@/app/_lib/db';
 
 export default async function Project({
   params,
 }: {
   params: { projectId: number };
 }) {
-  const response = await fetch(
-    `https://jefferson-bual-portfolio.vercel.app/project/${params.projectId}/api`,
-    {
-      next: { revalidate: 0.5 },
-    }
-  );
-  const data = await response.json();
+  const data = project_details.find((p) => p.id === Number(params.projectId));
+
+  if (data?.type === 'airflow' || data?.type === 'grafana') {
+    redirect(`/in-development?project=${data.type}`);
+  }
 
   return (
     <section>
@@ -38,23 +38,34 @@ export default async function Project({
           </header>
 
           <div className='h-fit w-full p-5 flex flex-wrap gap-5 items-center justify-center bg-gray-200'>
-            {data.link.map((link: string, index: number) => (
-              <div key={index}>
-                {data.type === 'mobile' ? (
-                  <img
-                    src={'https://lh3.googleusercontent.com/d/' + link}
-                    alt='img'
-                    className='w-[250px]'
-                  />
-                ) : (
-                  <img
-                    src={'https://lh3.googleusercontent.com/d/' + link}
-                    alt='img'
-                    className='w-[500px]'
-                  />
-                )}
-              </div>
-            ))}
+            {data.type === 'grafana' ? (
+              data.link.map((url: string, index: number) => (
+                <iframe
+                  key={index}
+                  src={url}
+                  className='w-full h-[80vh] border-0 rounded-lg'
+                  allowFullScreen
+                />
+              ))
+            ) : (
+              data.link.map((link: string, index: number) => (
+                <div key={index}>
+                  {data.type === 'mobile' ? (
+                    <img
+                      src={'https://lh3.googleusercontent.com/d/' + link}
+                      alt='img'
+                      className='w-[250px]'
+                    />
+                  ) : (
+                    <img
+                      src={'https://lh3.googleusercontent.com/d/' + link}
+                      alt='img'
+                      className='w-[500px]'
+                    />
+                  )}
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

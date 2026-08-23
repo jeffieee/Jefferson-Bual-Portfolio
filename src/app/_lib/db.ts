@@ -1,60 +1,24 @@
 export const project_details = [
-
   {
     id: 1,
-    name: 'E-Commerce Insights: An Exploratory Data Analysis on Purchasing Trends',
+    name: 'Airflow Data Pipeline - In Development',
     link: [
-      '11G85HixJY0MOPKBdYZtzOu8Ew7SdmUdP',
-      '1C-alJPq96A2k1rXNTUPL0rgHzMa1yM9_',
-      '1kYam0wBs7TN7dDK90hcSL5nEL2r7UkEV',
-      '19e1BXxK9bHc3kCUIZ6FRtSZ16foD62K_',
-      '1EhNS80tXfOVW_IrU7WODGWNihB8gOpSV',
-      '11mdmLpNjWuQXcR90NHrMbgaYWfGIxY9I',
-      '1IDyKy0y9J9R8BCcM6d6nx0v9E96elS3e',
-      '1FMznIKYo_jNPatfUXWPfRM05tdXnEghI',
-      '1DaeomsuT1Vb4E4s7gIvN5oHGa5CF8bfu',
-      '1-K5YnIdRxK5yTnM3Tt1u9iBSmG9PZug9',
-      '1EJUm-8Hq2wl9SmsKMV0a4mPNKNsPsg5n',
-      '1-n3MpnGPg3K1q98E_klya2U8d8OawGbK',
-      '1UY513RfpSGVzyW2oDjrH4nxdHfi4LCQs',
-      '1XMDWvoUEd-8X6FC3YliaN3bbKzzIMCcG',
+      '/in-development?project=airflow',
     ],
-    type: 'data analysis',
-    github_link: 'https://github.com/jeffieee/My-data-analysis-projects/tree/70df068ffb93a8219a180c8d09a5b5ecf72ca7d5/ecommerce_analysis',
+    type: 'airflow',
+    github_link: 'https://github.com/jeffieee',
   },
-
   {
     id: 2,
-    name: 'Healthcare Facility Dashboard: Key Insights',
+    name: 'Grafana Monitoring Dashboard - In Development',
     link: [
-      '1yjRCiqzK3jN-SevtytY9Eo6rqV75k2Vp',
-      '1PddLGwjP26zivb4TWVhbB0Tjq4Inde9w',
-      '1Pw-TfsFmuvRDnA4HgIyeNYk7sZj9wPos',
-      '1WYaP4vd0ebGSQjsSEsqPo5XooCuceY00',
-      '1sWcuoGLdhowL-by06miB3o2IHWL0PQ2g',
-      '1wmc4ACZpHu0Ke0SNmF2TqYiChM_tV4ZS',
-      '1f90Rz4SitdjDt2X0kqFIuGtEBDPIFqGp',
-      '1k8WbGJKIiUa_cDdypbJIzu8_IqTTb2Mq',
-      '1aqW4It7PrnVB9t2yG5b-Cl6vf9AZlnvU',
+      '/in-development?project=grafana',
     ],
-    type: 'data analysis',
-    github_link: 'https://github.com/jeffieee/My-data-analysis-projects/tree/57f3034b6c79fab64b3b0c4dc2678411e0497848/healthcare_analysis',
+    type: 'grafana',
+    github_link: 'https://github.com/jeffieee',
   },
   {
     id: 3,
-    name: 'Monkeypox Outbreak Data Analysis',
-    link: [
-      '1DrQ0v-lnPIme0Zig111pyD1eiCohvZvJ',
-      '17e3GO5LVOAjfGStTF4I8RScDcP3lhHnA',
-      '1yRKy-xrEVfuals63U62MyZRCQrRyyQQj',
-      '1tH4SNoChYxFhN8H7tuxTWCeNHPEp1JeP',
-      '1BuWSU82u2GuJtTLgGvAi0xj01Xdh3jW9',
-    ],
-    type: 'data analysis',
-    github_link: 'https://github.com/jeffieee/My-data-analysis-projects/tree/d18a44744d57c6caf33634b02612c5c61e14200d/mpox_analysis_2021-2024',
-  },
-  {
-    id: 4,
     name: 'CityAssist: Local Resident Monitoring and Demographic-Based Program Recommendation System',
     link: [
       '1YNSdJceEyLU5wwyZi3a7Rc38sufTdlZu',
@@ -72,31 +36,7 @@ export const project_details = [
     github_link: 'https://github.com/cocokhyle/DataDriven',
   },
   {
-    id: 5,
-    name: 'SimpleRNN Demographic Insight Model',
-    link: [
-      '1MbqO9jBSrcJql47HBR9aQ8d4H86TyE06',
-      '15LgmQVWojVvmuU5W1Cae7RN5MO0oGqju',
-      '1uVWnbeBkQMR4zBzJe9GUSYS94WdzEPIF',
-      '11n9Tu1mr6DuKNONEGHCT86INiUaY8POt',
-      
-    ],
-    type: 'model',
-    github_link: 'https://github.com/jeffieee/SimpleRNN-model/blob/f8f0c930b8ccd87bf8582dcae90da8dd22ae32c7/SimpleRNN.ipynb',
-  },
-
-  // {
-  //   id: 3,
-  //   name: 'LeNet with Incecption Model for Learning Baybayin Script from Scratch',
-  //   link: [
-  //     //to follow
-      
-  //   ],
-  //   type: 'model',
-  //   github_link: 'https://github.com/jeffieee/My-Projects/blob/8a48d7c822aa201e2f15606f02b1520d2c46ea47/model.py',
-  // },
-  {
-    id: 6,
+    id: 4,
     name: 'Web-Based Student Academic Performance Monitoring System for Banay-Banay Elementary School',
     link: [
       '1fJPClRSSf2-biD5ucry2-Ddn6JR3n0QY',
@@ -110,7 +50,7 @@ export const project_details = [
     github_link: 'https://github.com/jeffieee/My-Projects/blob/66a6c4ee6f056c0c5780781fa12cf9b96973adf7/README.md',
   },
   {
-    id: 7,
+    id: 5,
     name: 'BayaScript: Convolutional Neural Networks Driven Character Recognition In a Mobile Application for Learning BayBayin',
     link: [
       '1TKlxOKQNZkazynes-OaYzz64IqmR3_9V',
@@ -123,15 +63,12 @@ export const project_details = [
       '1SkYKuoH0D6Eg9Gz6WQ7Qv2yVf0rZOk-p',
       '1Sfjhv3Xvk07cnd4v0iMPljPUWtEPWVwS',
       '1SfCMWwDjFuqT5aB6AWGJlEBqxvlB6uWh',
-
       '1TDtF3yTjsZP86cvMdtRjE8z46sKX2UHu',
       '1SGcFT_AptB--5chVyVU1K66BTFvu7gpS',
       '1STKxA1ZhIh_zrmHDdfJzVu8WMDGa8Akp',
-
       '1SBZjVbbWdH22jTOKwBTgDAWOMWY1QIOW',
     ],
     type: 'mobile',
     github_link: 'https://github.com/jeffieee/My-Projects/blob/6be6e8515f639191dcf9e1639eae90423b0fb31f/README.md',
   },
-  
 ];

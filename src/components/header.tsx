@@ -9,14 +9,13 @@ export default function Header() {
   const [lastScrollTop, setLastScrollTop] = useState(0);
 
   const Menu = [
-    { name: 'Home', href: '#home-page' },
-    { name: 'About', href: '#about-page' },
+    { name: 'Home', href: '#/home' },
     { name: 'Projects', href: '#project-page' },
+    { name: 'Skills', href: '#skills-page' },
+    { name: 'Services', href: '#service-page' },
+    { name: 'About', href: '#about-page' },
     { name: 'Contact', href: '#footer-page' },
-    { service: 'Service', href: '#service-page' },
   ];
-
-  const Service = Menu[4];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
